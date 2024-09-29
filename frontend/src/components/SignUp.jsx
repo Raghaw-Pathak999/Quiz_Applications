@@ -1,4 +1,4 @@
-//  signUp.jsx
+//  SignUp.jsx
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -22,7 +22,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/signup', formData);
+            await axios.post('https://quiz-applications-backend.onrender.com/api/signup', formData);
             toast.success('Signup successful Please login', {
                 autoClose: 2000,
                 className: 'toast-success',

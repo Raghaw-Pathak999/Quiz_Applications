@@ -1,3 +1,4 @@
+// AdminPage.jsx
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -44,7 +45,7 @@ const AdminPage = () => {
                 correctAnswer: quiz.correctAnswer
             }));
 
-            const response = await axios.post('http://localhost:5000/api/quiz/create', { questions: formattedQuizzes });
+            const response = await axios.post('https://quiz-applications-backend.onrender.com/api/quiz/create', { questions: formattedQuizzes });
             console.log('Quiz saved successfully:', response.data);
             setToastMessage('Quiz has been created successfully!'); // Set toast message
             setQuizzes([{ questionText: '', options: ['', '', '', ''], correctAnswer: '' }]); // Reset state

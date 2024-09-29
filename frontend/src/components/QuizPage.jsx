@@ -1,3 +1,5 @@
+// QuizPage.jsx
+
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -14,7 +16,7 @@ const QuizPage = () => {
     useEffect(() => {
         const fetchQuizzes = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/quiz');
+                const response = await axios.get('https://quiz-applications-backend.onrender.com/api/quiz');
                 console.log(response.data); // Log response data
                 setQuizzes(response.data); // Set quizzes directly from response
                 generateRandomQuizzes(response.data); // Generate initial 5 random quizzes
@@ -96,7 +98,7 @@ const QuizPage = () => {
                                         {question.options.map((option, optionIndex) => (
                                             <div key={optionIndex}>
                                                 <input
-                                                className='checkboxll'
+                                                    className='checkboxll'
                                                     type="radio"
                                                     name={`quiz_${quizIndex}_question_${questionIndex}`} // Unique name for each question
                                                     value={option}

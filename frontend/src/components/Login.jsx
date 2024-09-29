@@ -1,3 +1,5 @@
+// Login.jsx
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -21,7 +23,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/login', { email, password });
+            const response = await axios.post('https://quiz-applications-backend.onrender.com/api/login', { email, password });
             localStorage.setItem('token', response.data.token);
             const role = response.data.role;
             toast.success('Login successful!', {
