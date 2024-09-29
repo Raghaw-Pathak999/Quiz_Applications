@@ -65,7 +65,7 @@ const QuizPage = () => {
     };
 
     if (loading) {
-        return <div>Loading quizzes...</div>; // Show loading message
+        return <div className='Loading'>Loading quizzes...</div>; // Show loading message
     }
 
     if (score !== null) {
